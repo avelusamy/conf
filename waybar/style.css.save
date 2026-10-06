@@ -1,0 +1,208 @@
+@import url("/home/juniper/.config/waybar/colors.css");
+
+* {
+    font-family: "Jetbrains Mono Nerd Font", FontAwesome;
+    border: none;
+    border-radius: 0px;
+}
+
+window#waybar {
+    background-color: @background;
+    color: #ffffff;
+    border-bottom: 0px solid #ffffff;
+    transition-property: background-color;
+    transition-duration: 0.5s;
+}
+
+#workspaces {
+    margin: 1px 1px 1px 1px;
+    padding: 0px 1px;
+    border-radius: 15px;
+    border: 0px;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 16px;
+    color: @color1;
+}
+
+#workspaces button.active {
+    color: @color1;
+    background: transparent;
+    border-radius: 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+
+tooltip {
+    border-radius: 10px;
+    background-color: @color0;
+    opacity: 0.8;
+    padding: 20px;
+    margin: 0px;
+}
+
+tooltip label {
+    color: @color4;
+}
+
+#window {
+    background: @foreground;
+    margin: 5px 15px 5px 0px;
+    padding: 2px 10px 0px 10px;
+    border-radius: 12px;
+    color: @color2;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+window#waybar.empty #window {
+    background-color: transparent;
+}
+
+#taskbar {
+    background: @background;
+    margin: 1px 15px 1px 0px;
+    padding: 0px;
+    border-radius: 15px;
+    font-weight: normal;
+    font-style: normal;
+    border: 3px solid @foreground;
+}
+
+#taskbar button {
+    margin: 0;
+    border-radius: 15px;
+    padding: 0px 5px 0px 5px;
+}
+
+.modules-left>widget:first-child>#workspaces {
+    margin-left: 0;
+}
+
+.modules-right>widget:last-child>#workspaces {
+    margin-right: 0;
+}
+
+/*
+ * Modules
+ */
+
+#idle-inhibitor {
+    margin-right: 15px;
+    font-size: 22px;
+    font-weight: bold;
+    opacity: 0.8;
+    color: @foreground;
+}
+
+#memory,
+#cpu {
+    margin: 0px;
+    padding: 0px;
+    font-size: 16px;
+    color: @foreground;
+}
+
+#clock {
+    background-color: @background;
+    font-size: 16px;
+    color: @color3;
+    border-radius: 15px;
+    padding: 1px 10px 0px 10px;
+    margin: 0px 15px 0px 0px;
+    opacity: 0.8;
+}
+
+#wireplumber {
+    background-color: @background;
+    font-size: 16px;
+    color: @color4;
+    /*padding: 2px 10px 0px 10px;*/
+    /*margin: 0px 15px 0px 0px;*/
+    opacity: 0.8;
+}
+
+#network {
+    background-color: @background;
+    font-size: 16px;
+    color: @color4;
+    /*padding: 2px 10px 0px 10px;*/
+    /*margin: 0px 15px 0px 0px;*/
+    opacity: 0.8;
+}
+
+#network.wifi {
+    background-color: @background;
+    color: @color4;
+}
+
+#backlight {
+    background-color: @background;
+    font-size: 16px;
+    color: @color4;
+}
+
+#bluetooth,
+#bluetooth.on,
+#bluetooth.connected {
+    background-color: @background;
+    font-size: 16px;
+    color: @color4;
+    padding: 2px 10px 0px 10px;
+    margin: 0px 15px 0px 0px;
+    opacity: 0.8;
+}
+
+#bluetooth.off {
+    background-color: transparent;
+    padding: 0px;
+    margin: 0px;
+}
+
+#battery {
+    background-color: @background;
+    font-size: 16px;
+    color: @color4;
+    /*padding: 2px 10px 0px 10px;
+    margin: 0px 15px 0px 0px;*/
+    opacity: 0.8;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: @color4;
+    background-color: @background;
+}
+
+@keyframes blink {
+    to {
+        background-color: @background;
+        color: @color4;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: @foreground;
+    color: @color5;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#tray {
+    padding: 0px 15px 0px 0px;
+}
+
+#tray>.passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray>.needs-attention {
+    -gtk-icon-effect: highlight;
+}
+
+#custom-notification {
+    font-family: "NotoSansMono Nerd Font";
+}

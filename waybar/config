@@ -1,0 +1,28 @@
+{
+	"layer": "top",
+	"position": "top",
+	"height": 20,
+	"spacing": 4,
+	"include": [
+		"/home/juniper/.config/waybar/modules.json"
+	],
+	"modules-left": [
+		"hyprland/workspaces",
+		"hyprland/submap",
+		"cpu",
+        "temperature",
+        "memory",
+        "custom/gpu-usage"
+	],
+	"modules-center": [
+		"clock"
+	],
+	"modules-right": [
+		"tray",
+		"wireplumber",
+		"backlight",
+		"battery",
+		"network",
+
+	]
+}
